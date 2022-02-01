@@ -11,21 +11,8 @@ puts "----------"
 
 # Your code goes here ...
 
-def validator (store)
-  #check conditions
-  true
-end
+print "What is your store called? : "
+@new_store = $stdin.gets.chomp
 
-
-# while
-
-  print "What is your store called? : "
-  @new_store = $stdin.gets.chomp
-
-  if (validator(@new_store))
-#     Store.create(name: "#{name}", annual_revenue: #{rev}, mens_apparel: #{bool1}, womens_apparel: #{bool2})
-  end
-
-  Store.create(name: "#{@new_store}")
-
-# end
+@store = Store.create(name: @new_store)
+puts @store.errors.full_messages
